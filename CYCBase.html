@@ -1,24 +1,42 @@
+<!--Sources: https://www.w3schools.com/howto/howto_js_vertical_tabs.asp 
+https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_vertical_tabs
+https://fontawesome.com/v4/icons/-->
+
+
 <!DOCTYPE html>
 <html>
 <head>
     <title>CYCBase</title>
     <link rel="stylesheet" href="style.css" type="text/css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
     * {box-sizing: border-box}
-body {font-family: "Lato", sans-serif;}
+body {font-family: "Lato", sans-serif;font-size: 125%;}
 
+loginbutton{
+    font-size: 25px;
+    padding: 10px;
+    border: 1pt;
+    border-radius: 10px;
+    margin:2;
+    color: white;
+    cursor: pointer;
+}
 .tab {
     float: left;
     border: none;
-    background-color: #34eea4;
-    width: 30%;
+    color: white;
+    background-color: #a1efd0;
+    width: 20%;
     height: 300%;
+    border-radius: 100px;
+    font-size: 100%;
   }
 .tab button {
     display: block;
     background-color: inherit;
-    color: black;
+    color: white;
     padding: 22px 16px;
     width: 100%;
     border: none;
@@ -26,7 +44,7 @@ body {font-family: "Lato", sans-serif;}
     text-align: left;
     cursor: pointer;
     transition: 0.3s;
-    font-size: 17px;
+    font-size: 20px;
   }
 .tab button:hover {
   background-color: rgb(0, 150, 105);
@@ -43,28 +61,59 @@ body {font-family: "Lato", sans-serif;}
   height: 300px;
 }
 </style>
-<h1>CheckYourCar.com</h1>
+<h1><i class="fa fa-car"></i> CheckYourCar.com</h1>
+
 
 </head>
 <body>
+    <div id="loginButton">
+        <loginLogo id="logo"></loginLogo>
+        <loginbutton id="login">Login/Register <i class="fa fa-user-circle"></i></loginbutton>
+        </div>
     <!--Establish tabs-->
     <div class="tab">
-        <button class ="tablinks" onclick="openTab(event, 'Home')" id="defaultOpen">Home</button>
-        <button class="tablinks" onclick="openTab(event, 'MechDeal')">MechDeal</button>
-        <button class="tablinks" onclick="openTab(event, 'Search')">Search</button>
-        <button class="tablinks" onclick="openTab(event, 'List')">List</button>
+        <button class ="tablinks" onclick="openTab(event, 'Home')" id="defaultOpen"><i class="fa fa-home"></i> Home</button>
+        <button class="tablinks" onclick="openTab(event, 'MechDeal')"><i class="fa fa-wrench"></i> Mechanics/ Dealerships</button>
+        <button class="tablinks" onclick="openTab(event, 'Search')"><i class="fa fa-search"></i> Search Vehicle Recalls</button>
+        <button class="tablinks" onclick="openTab(event, 'List')"><i class="fa fa-bars"></i> List and Filter Recalls</button>
     </div>
 
     <!--homepage-->
     <div id="Home" class="tabcontent">
         <h3>Home</h3>
-        <p>Get a better car idiot</p>
+        <p>Check for recalls on your car</p>
+        <p>Fill out the information below</p>
+
+        <form class="example" action="/action_page.php" style="padding-left:16px">
+            <input type="text" placeholder="e.g. (ABC123)" name="search2">
+          
+          
+          <form action="/action_page.php">
+              <p></p>
+             <label for="states">Select your state:</label>
+             <select name="states" id="states">
+              <option value="ACT">ACT</option>
+              <option value="NSW">NSW</option>
+              <option value="NT">NT</option>
+              <option value="QLD">QLD</option>
+              <option value="SA">SA</option>
+              <option value="TAS">TAS</option>
+              <option value="VIC">VIC</option>
+              <option value="WA">WA</option>
+             </select>
+             <br><br>
+             <input type="submit" value="Submit">
+           </form>
       </div>
 
     <!--Mechanics and Dealerships-->
     <div id="MechDeal" class="tabcontent">
         <h3>Mechanics/Dealerships</h3>
-        <p>Get your car fixed dickhead</p>
+        <p>Enter your post code to find a mechanic</p>
+        <p>or dealership near you</p>
+        <form class="example" action="/action_page.php" style="padding-left:16px">
+            <input type="text" placeholder="Postcode" name="search2">
+          
       </div>
     
     <!--Search Recalls-->
@@ -75,7 +124,7 @@ body {font-family: "Lato", sans-serif;}
 
     <!--List/Filter Recalls-->
     <div id="List" class="tabcontent">
-        <h3>List/Filter Recalls</h3>
+        <h3>List and Filter Recalls</h3>
         <p>Recalls n shit. I dunno</p>
       </div>
     
