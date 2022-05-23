@@ -25,12 +25,13 @@ loginbutton{
 }
 .tab {
     float: left;
-    border: none;
+    border: 7pt;
+    border-collapse: separate;
     color: white;
     background-color: #a1efd0;
     width: 20%;
-    height: 300%;
-    border-radius: 100px;
+    height: 600px;
+    border-radius: 10px;
     font-size: 100%;
   }
 .tab button {
@@ -53,13 +54,44 @@ loginbutton{
   background-color: rgb(3, 131, 105);
 }
 .tabcontent {
-  float: left;
-  padding: 0px 12px;
-  border: none;
-  width: 70%;
-  border-left: none;
-  height: 300px;
+  padding: 0px 0px;
+  color: rgb(0, 0, 0);
+  background-color: #ffffff;
+  width: 750px;
+  height: fit-content;
+  border-radius: 20px;
+  margin: 30px;
+  font-size: 100%;
+  box-shadow: 0 9px #999;
+  display: flex;
+  position: fixed;
+  left: 30%;
+  margin-top: 40px;
+  text-align: center;
+  padding: 5pt;
 }
+.button {
+  border: 20px;
+  border-color: rgb(61, 61, 61);
+  color: black;
+  text-align: left;
+  cursor: pointer;
+  background-color: white;
+  box-shadow: 5px 0 3px  rgb(3, 131, 105);
+  white-space: normal;
+  width: 200px;
+  font-size: 100%;
+  margin: 10px;
+  margin-left: 0;
+}
+.selectionWrapper {
+  border-radius: 36px;
+  display: inline-block;
+  overflow: hidden;
+  background-color: #28e6a3;
+  border: 1px;
+}
+
 </style>
 <h1><i class="fa fa-car"></i> CheckYourCar.com</h1>
 
@@ -72,62 +104,91 @@ loginbutton{
         </div>
     <!--Establish tabs-->
     <div class="tab">
-        <button class ="tablinks" onclick="openTab(event, 'Home')" id="defaultOpen"><i class="fa fa-home"></i> Home</button>
-        <button class="tablinks" onclick="openTab(event, 'MechDeal')"><i class="fa fa-wrench"></i> Mechanics/ Dealerships</button>
-        <button class="tablinks" onclick="openTab(event, 'Search')"><i class="fa fa-search"></i> Search Vehicle Recalls</button>
-        <button class="tablinks" onclick="openTab(event, 'List')"><i class="fa fa-bars"></i> List and Filter Recalls</button>
+        <button class ="tablinks" onclick="openTab(event, 'Home')" id="defaultOpen"><i class="fa fa-home"></i>  Home</button>
+        <button class="tablinks" onclick="openTab(event, 'MechDeal')"><i class="fa fa-wrench"></i>  Mechanics/ dealerships</button>
+        <button class="tablinks" onclick="openTab(event, 'Search')"><i class="fa fa-search"></i>  Search vehicle recalls</button>
+        <button class="tablinks" onclick="openTab(event, 'List')"><i class="fa fa-bars"></i>  List and filter recalls</button>
+        <button class="tablinks" onclick="openTab(event, 'About')"><i class="fa fa-info-circle"></i>  About us</button>
     </div>
 
     <!--homepage-->
     <div id="Home" class="tabcontent">
-        <h3>Home</h3>
-        <p>Check for recalls on your car</p>
-        <p>Fill out the information below</p>
-
-        <form class="example" action="/action_page.php" style="padding-left:16px">
-            <input type="text" placeholder="e.g. (ABC123)" name="search2">
-          
-          
-          <form action="/action_page.php">
-              <p></p>
-             <label for="states">Select your state:</label>
-             <select name="states" id="states">
-              <option value="ACT">ACT</option>
-              <option value="NSW">NSW</option>
-              <option value="NT">NT</option>
-              <option value="QLD">QLD</option>
-              <option value="SA">SA</option>
-              <option value="TAS">TAS</option>
-              <option value="VIC">VIC</option>
-              <option value="WA">WA</option>
-             </select>
-             <br><br>
-             <input type="submit" value="Submit">
-           </form>
-      </div>
+        <h4>Check if your car has been affected by a recall</h4>
+        <button class="comment">State of registration</button>
+        <button class="comment">Number Plate</button>
+        <button class="comment"> </button>
+        <select class="selectionbox">
+          <option value="" disabled selected hidden>State...</option>
+          <option>ACT</option>
+          <option>NSW</option>
+          <option>NT</option>
+          <option>QLD</option>
+          <option>SA</option>
+          <option>TAS</option>
+          <option>VIC</option>
+          <option>WA</option>
+        </select>
+        <input type="text" id="inputbox" placeholder="Registration..."/> 
+        <button class="button3">Submit!</button>
+    </div>
 
     <!--Mechanics and Dealerships-->
     <div id="MechDeal" class="tabcontent">
         <h3>Mechanics/Dealerships</h3>
         <p>Enter your post code to find a mechanic</p>
         <p>or dealership near you</p>
-        <form class="example" action="/action_page.php" style="padding-left:16px">
-            <input type="text" placeholder="Postcode" name="search2">
-          
+        <input type="text" id="inputbox" placeholder="Postcode..."/> 
+        <p></p>
       </div>
     
     <!--Search Recalls-->
     <div id="Search" class="tabcontent">
         <h3>Search Vehicle Recalls</h3>
-        <p>Open your goddam eyes</p>
+        <p>Enter keywords such as the recall or vehicle type</p>
+        <input type="text" id="inputbox" placeholder="Keywords..."/> 
+        <button class="button3">Submit!</button>
+          <p></p>
       </div>
 
     <!--List/Filter Recalls-->
     <div id="List" class="tabcontent">
         <h3>List and Filter Recalls</h3>
-        <p>Recalls n shit. I dunno</p>
+        <p></p>
       </div>
     
+    <!--About Us-->
+    <div id="About" class="tabcontent">
+      <h3>About Us</h3>
+      <p>According to all known laws of aviation, there is no way a bee should be able to fly.
+        Its wings are too small to get its fat little body off the ground.
+        The bee, of course, flies anyway because bees don't care what humans think is impossible.
+        Yellow, black. Yellow, black. Yellow, black. Yellow, black.
+        Ooh, black and yellow!
+        Let's shake it up a little.
+        Barry! Breakfast is ready!
+        Coming!
+        Hang on a second.
+        Hello?
+        Barry?
+        Adam?
+        Can you believe this is happening?
+        I can't.
+        I'll pick you up.
+        Looking sharp.
+        Use the stairs, Your father paid good money for those.
+        Sorry. I'm excited.</p>
+    </div>
+    
+    <!-- Home page buttons-->
+    <div id="btn1">
+      <button class="button"> Check if your car has Takata airbags</button><br>
+    </div>
+    <div id="btn2">
+      <button class="button"> What to do if you are affected by a recall</button><br>
+    </div>
+    <div id="btn3">
+      <button class="button"> What is a vehicle recall?</button>
+    </div>
       <script>
         function openTab(evt, selection) {
           var i, tabcontent, tablinks;
@@ -146,3 +207,4 @@ loginbutton{
         </script>
 </body>
 </html>
+<!--souce: Anthony Nixon, "bee movie script", https://gist.github.com/AnthonyNixon/6ae63abd1834485811200daefc319b40-->

@@ -13,6 +13,91 @@ h3{
 h2{
     color:white;
 }
+h4{
+    color: black;
+    font-size: 100%;
+    text-align: center;
+}
 #loginButton{
     position: absolute; top: 40px; right:10px;
+}
+button{
+    border: 1pt;
+    border-radius: 5px;
+    text-align: center;
+    display: inline;
+}
+.button3 {
+    text-align: center;
+    width: 150px;
+    height: 44px;
+    cursor: pointer;
+    border-radius: 22px;
+    background-color: #28e6a3;
+    color: white;
+    font-size: 100%;
+    margin: 40px;
+    margin-top: 5px;
+  }
+.selectionbox {
+    text-align: center;
+    width: 150px;
+    height: 44px;
+    border-radius: 22px;
+    border: 1px;
+    background-color: #28e6a3;
+    color: white;
+    font-size: 100%;
+    margin: 40px;
+    margin-top: 5px;
+
+}
+#inputbox {
+    text-align: center;
+    border: 0px;
+    width: 150px;
+    height: 44px;
+    border-radius: 22px;
+    background-color: #28e6a3;
+    color: white;
+    font-size: 100%;
+    margin: 40px;
+    margin-top: 5px;
+}
+.comment {
+    text-align: center;
+    width: 150px;
+    height:fit-content;
+    cursor:default;
+    background-color: white;
+    color: black;
+    font-size: 75%;
+    margin-bottom: 3px;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-top: 5px;
+}
+div#frm *{
+    display:inline
+}
+div#btn1 *{
+    position:fixed;
+    bottom: 180pt;
+    left: 22%;
+}
+div#btn2 *{
+    position:fixed;
+    bottom: 130pt;
+    left: 22%;
+}
+div#btn3 *{
+    position:fixed;
+    bottom: 80pt;
+    left: 22%;
+}
+body {
+    background-color: rgb(237, 237, 237);
+}
+::placeholder {
+    color: white;
 }
